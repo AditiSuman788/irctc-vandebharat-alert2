@@ -6,10 +6,12 @@ CHAT_ID = os.environ["CHAT_ID"]
 
 url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
-requests.post(
+response = requests.post(
     url,
     json={
         "chat_id": CHAT_ID,
-        "text": "✅ GitHub Action is running successfully"
+        "text": "✅ Test message from GitHub Actions"
     }
 )
+
+print(response.text)
